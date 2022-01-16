@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tutorial - 10</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="cssmain.css">
+    <style type="text/css">
+        .intro {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            padding-left: 30px;
+            margin-bottom: 50px;
+        }
+
+        .intro_1 {
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            margin-bottom: 50px;
+        }
+
+        .bar {
+
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            text-align: center;
+            padding: 10px 1px 75px 10px;
+            margin-bottom: 100px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div style="border: 10px solid black;border-radius: 100px;" class="intro">
+        <h1 align="center">Top Countries With The Most Launched Satellites</h1>
+    </div>
+
+    <div id="cssmain" class="intro">
+        <ul>
+            <li><a href="#bar_chart">Till 2020</a></li>
+            <li><a href="#bar_chart_1">Between 2000-2020</a></li>
+            <li><a href="#bar_chart_2">Between 1980-2000</a></li>
+            <li><a href="#bar_chart_3">Between 1960-1980</a></li>
+        </ul>
+    </div>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <div style="border: 1px solid rgb(59, 66, 63);border-radius: 5px;" class="intro_1">
+        <center>
+            <h1>Till Now(1960 - 2020)</h1>
+        </center>
+    </div>
+
+    <div id="bar_chart" class="bar"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Name', '1960-1980', '1980-2000', '2000-2020'],
+                ['United States', 933, 1697, 3772],
+                ['Soviet Union', 1446, 2757, 2757],
+                ['Russia', 0, 336, 810],
+                ['China', 8, 53, 535],
+                ['Japan', 18, 82, 266],
+                ['United Kingdom', 12, 28, 188],
+                ['Multinational', 15, 50, 154],
+                ['India', 2, 25, 117],
+                ['France', 17, 39, 109],
+                ['Germony', 7, 34, 99],
+                ['Intelsat', 16, 24, 75],
+                ['Canada', 9, 20, 65],
+                ['Italy', 5, 14, 44],
+                ['South Koria', 0, 5, 38],
+                ['Brazil', 1, 10, 29],
+                ['Saudi Arabia', 0, 7, 29],
+                ['Australia', 2, 9, 27],
+                ['Israel', 3, 5, 27],
+                ['Luxembourge', 0, 9, 25],
+                ['Indonesia', 2, 11, 22]
+            ]);
+
+            var options = {
+                'width': 2000,
+                'height': 2000,
+            };
+
+            var chart2 = new google.visualization.BarChart(document.getElementById('bar_chart'));
+            chart2.draw(data, options);
+        }
+    </script>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <div style="border: 1px solid rgb(59, 66, 63);border-radius: 5px;" class="intro_1">
+        <center>
+            <h1>Between 2000 - 2020</h1>
+        </center>
+    </div>
+
+    <div id="bar_chart_1" class="bar"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Country');
+            data.addColumn('number', 'Satelites');
+            data.addRows([
+                ['United States', 3772],
+                ['Soviet Union', 2757],
+                ['Russia', 810],
+                ['China', 535],
+                ['Japan', 266],
+                ['United Kingdom', 188],
+                ['Multinational', 154],
+                ['India', 117],
+                ['France', 109],
+                ['Germony', 99],
+                ['Intelsat', 75],
+                ['Canada', 65],
+                ['Italy', 44],
+                ['South Koria', 38],
+                ['Brazil', 29],
+                ['Saudi Arabia', 29],
+                ['Australia', 27],
+                ['Israel', 27],
+                ['Luxembourge', 25],
+                ['Indonesia', 22]
+            ]);
+
+
+            var options = {
+                'width': 2000,
+                'height': 1000,
+            };
+
+            var chart2 = new google.visualization.BarChart(document.getElementById('bar_chart_1'));
+            chart2.draw(data, options);
+
+            var options1 = {
+                legend: 'none',
+                bar: { groupWidth: '100%' },
+                candlestick: {
+                    fallingColor: { strokeWidth: 0, fill: '#a52714' },
+                    risingColor: { strokeWidth: 0, fill: '#0f9d58' }
+                }
+            };
+        }
+    </script>
+    <hr>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <div>
+        <div style="border: 1px solid rgb(59, 66, 63);border-radius: 5px;" class="intro_1">
+            <h1 align="center">Between 1980 - 2000</h1>
+        </div>
+
+        <div id="bar_chart_2" class="bar"></div>
+
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Country');
+            data.addColumn('number', 'Satelites');
+            data.addRows([
+                ['United States', 1697],
+                ['Soviet Union', 2757],
+                ['Russia', 336],
+                ['China', 53],
+                ['Japan', 82],
+                ['United Kingdom', 28],
+                ['Multinational', 50],
+                ['India', 25],
+                ['France', 39],
+                ['Germony', 34],
+                ['Intelsat', 24],
+                ['Canada', 20],
+                ['Italy', 14],
+                ['Australia', 9],
+                ['Brazil', 10],
+                ['Luxembourge', 9],
+                ['Indonesia', 11]
+            ]);
+
+
+            var options = {
+                'width': 2000,
+                'height': 1000,
+            };
+
+            var chart2 = new google.visualization.BarChart(document.getElementById('bar_chart_2'));
+            chart2.draw(data, options);
+
+            var options1 = {
+                legend: 'none',
+                bar: { groupWidth: '100%' },
+                candlestick: {
+                    fallingColor: { strokeWidth: 0, fill: '#a52714' },
+                    risingColor: { strokeWidth: 0, fill: '#0f9d58' }
+                }
+            };
+        }
+    </script>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <div>
+        <div style="border: 1px solid rgb(59, 66, 63);border-radius: 5px;" class="intro_1">
+            <h1 align="center">Between 1960 - 1980</h1>
+        </div>
+
+        <div id="bar_chart_3" class="bar"></div>
+
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Country');
+            data.addColumn('number', 'Satelites');
+            data.addRows([
+                ['United States', 933],
+                ['Soviet Union', 1446],
+                ['China', 8],
+                ['Japan', 18],
+                ['United Kingdom', 12],
+                ['Multinational', 15],
+                ['India', 2],
+                ['France', 17],
+                ['Germony', 7],
+                ['Intelsat', 24],
+                ['Canada', 9],
+                ['Italy', 5],
+                ['Australia', 2],
+                ['Indonesia', 2],
+                ['Netherlands', 1]
+            ]);
+
+
+            var options = {
+                'width': 2000,
+                'height': 1000,
+            };
+
+            var chart2 = new google.visualization.BarChart(document.getElementById('bar_chart_3'));
+            chart2.draw(data, options);
+
+            var options1 = {
+                legend: 'none',
+                bar: { groupWidth: '100%' },
+                candlestick: {
+                    fallingColor: { strokeWidth: 0, fill: '#a52714' },
+                    risingColor: { strokeWidth: 0, fill: '#0f9d58' }
+                }
+            };
+        }
+    </script>
+    <hr>
+
+</body>
+
+</html>
