@@ -1,0 +1,3 @@
+A static dashboard about till launching satellites by various counties.
+
+It is made by HTML and CSS.
